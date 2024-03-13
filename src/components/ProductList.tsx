@@ -44,8 +44,16 @@ const ProductList = () => {
     }
 
     return (
-        <div className="h-full w-full p-24">
+        <div className="h-full w-full p-24 relative">
+            <Draw>
+                <h2 className="text-center ">Agregar articulo</h2>
+                <AddProductForm onSubmit={handleAddProduct} />
+            </Draw>
 
+            <DrawTransaction>
+                <h2 className="text-center ">Agregar Transaccion</h2>
+                <AddTransactionForm products={products} onSubmit={handleAddTransaction} />
+            </DrawTransaction>
             <div className="rounded-none">
                 <div className="mb-8 flex items-center justify-between gap-8">
                     <div>
@@ -279,15 +287,7 @@ const ProductList = () => {
                     </tbody>
                 </table>
             </div>
-            <Draw>
-                <h2 className="text-center ">Agregar articulo</h2>
-                <AddProductForm onSubmit={handleAddProduct} />
-            </Draw>
 
-            <DrawTransaction>
-                <h2 className="text-center ">Agregar Transaccion</h2>
-                <AddTransactionForm products={products} onSubmit={handleAddTransaction} />
-            </DrawTransaction>
         </div>
     );
 }

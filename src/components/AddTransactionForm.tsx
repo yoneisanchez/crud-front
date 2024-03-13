@@ -78,7 +78,7 @@ const AddTransactionForm: React.FC<Props> = ({ onSubmit, products }) => {
                     {
                         products.map((product: ARTICULOS) => {
                             return (
-                                <option value={product.Id}>
+                                <option value={product.Id} key={product.Id}>
                                     {
                                         product.Descripcion
                                     }
@@ -91,7 +91,7 @@ const AddTransactionForm: React.FC<Props> = ({ onSubmit, products }) => {
             {
                 formValues && formValues.map(({ name, type, props }: { name: string; type: string; props: {} }) => {
                     return (
-                        <div className='p-4'>
+                        <div className='p-4' key={name}>
                             <label>{name}</label>
                             <input
                                 className='p-2 w-full border-2 border-grey rounded-md'
